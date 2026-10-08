@@ -53,6 +53,20 @@ promo-kit/
 └── LICENSE-Apache-2.0.txt     Apache-2.0 全文（适用上游衍生部分）
 ```
 
+## 长什么样
+
+`./install.sh demo` 渲染出来的五张卡（`demo/out/`，逐张审计全 PASS）：
+
+| 封面 | 账本行 | 管线 |
+|---|---|---|
+| ![封面](demo/out/card-01.png) | ![账本行](demo/out/card-02.png) | ![管线](demo/out/card-03.png) |
+
+| 矩阵 | 金句（呼吸型） |
+|---|---|
+| ![矩阵](demo/out/card-04.png) | ![金句](demo/out/card-05.png) |
+
+`demo/out/cards.audit.json` 是同一批的机器可读结论，`demo/out/contact-sheet.html` 是给人抽检的总览页。
+
 ## 卡片规格（`cards.json`）
 
 ```json
