@@ -79,6 +79,17 @@ updated: 2026-10-08T07:20:00Z
 
 `topics/<slug>/assets/` 是站点 CI 必须拿到的源文件（CI 在 ubuntu 上没有 Chrome 和中文字体），所以只有签过字的成品才进去；`dist/` 永不手改。
 
+**交付（把素材送出去）**：图片 / GIF / 小视频走 **GitHub**——提交进内容源仓库的 `topics/<slug>/assets/`，或推到专用仓库，然后给对方两个可用的地址：
+
+- 可浏览：`https://<owner>.github.io/<repo>/<path>`（Pages）
+- 给机器读：`https://raw.githubusercontent.com/<owner>/<repo>/main/<path>`
+
+**超过 100 MB 的视频不上 GitHub**（单文件上限 100 MB），走阿里云盘 `DLSS5-Studio/<批次>/`。推送是对外动作：**动手前拿到一句明确许可**，别自己发起。
+
+两个已知的坑：首次 push 会被代理打成 `RPC failed; HTTP 400`，改用
+`git -c http.postBuffer=104857600 -c http.version=HTTP/1.1 push` 就过；新开的 Pages 第一次构建会
+`Page build failed.`，补一个空 `.nojekyll` 再推，约 1–2 分钟上线（没有 `index.html` 时站点根目录是 404，所以链接要指到具体文件）。
+
 ## 5. 硬红线
 
 - 素材版权：**「能解析」不等于「可商用」**。HeyGen / media-use 目录里的通用 BGM、图库不直接上小红书、抖音和商业站点。配乐优先序：平台官方商业音乐库 → 自购并留存凭证 → 自制无采样 → 无音乐版；每个音频记 `license_ref`（用途、地区、期限、证据路径）。落地失败就降级，不重试到发布、不下载来历不明的文件。
