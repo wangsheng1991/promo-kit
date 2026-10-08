@@ -1,0 +1,174 @@
+{
+  "spec": "cards.json",
+  "generated_at": "2026-10-08T06:43:46.260Z",
+  "canvas": "1080x1440@1x",
+  "chrome": "154.0.8037.100",
+  "thresholds": {
+    "fill_min": 0.75,
+    "largest_gap_px": 216,
+    "bottom_band": "must have content",
+    "breathing": "金句/单句陈述卡免填充率，但必须有顶 kicker + 底出处行 + 发丝线三锚点"
+  },
+  "cards": [
+    {
+      "index": 1,
+      "layout": "ledger",
+      "title": "把内容规则，做成能拷走的工具",
+      "fill_ratio": 0.84,
+      "content_extent_px": 1210,
+      "covered_px": 724.28125,
+      "top_gap_px": 115,
+      "bottom_gap_px": 115,
+      "largest_gap_px": 116,
+      "largest_gap_pct": 0.081,
+      "bands": [
+        "content",
+        "content",
+        "content",
+        "content"
+      ],
+      "bottom_band_has_content": true,
+      "overflow_px": 0,
+      "breathing": false,
+      "anchors": {
+        "kicker": true,
+        "source": true,
+        "bottom_rule": true,
+        "top_gap_px": 115,
+        "bottom_gap_px": 115
+      },
+      "verdict": "pass",
+      "issues": [],
+      "png": "card-01.png"
+    },
+    {
+      "index": 2,
+      "layout": "ledger",
+      "title": "七个维度，一把尺子",
+      "fill_ratio": 0.84,
+      "content_extent_px": 1210,
+      "covered_px": 807.203125,
+      "top_gap_px": 115,
+      "bottom_gap_px": 115,
+      "largest_gap_px": 81,
+      "largest_gap_pct": 0.056,
+      "bands": [
+        "content",
+        "content",
+        "content",
+        "content"
+      ],
+      "bottom_band_has_content": true,
+      "overflow_px": 0,
+      "breathing": false,
+      "anchors": {
+        "kicker": true,
+        "source": true,
+        "bottom_rule": true,
+        "top_gap_px": 115,
+        "bottom_gap_px": 115
+      },
+      "verdict": "pass",
+      "issues": [],
+      "png": "card-02.png"
+    },
+    {
+      "index": 3,
+      "layout": "pipeline",
+      "title": "一条文案的五步",
+      "fill_ratio": 0.84,
+      "content_extent_px": 1210,
+      "covered_px": 657.015625,
+      "top_gap_px": 115,
+      "bottom_gap_px": 115,
+      "largest_gap_px": 123,
+      "largest_gap_pct": 0.086,
+      "bands": [
+        "content",
+        "content",
+        "content",
+        "content"
+      ],
+      "bottom_band_has_content": true,
+      "overflow_px": 0,
+      "breathing": false,
+      "anchors": {
+        "kicker": true,
+        "source": true,
+        "bottom_rule": true,
+        "top_gap_px": 115,
+        "bottom_gap_px": 115
+      },
+      "verdict": "pass",
+      "issues": [],
+      "png": "card-03.png"
+    },
+    {
+      "index": 4,
+      "layout": "grid",
+      "title": "六种骨架，各有最小密度线",
+      "fill_ratio": 0.84,
+      "content_extent_px": 1210,
+      "covered_px": 1009,
+      "top_gap_px": 115,
+      "bottom_gap_px": 115,
+      "largest_gap_px": 81,
+      "largest_gap_pct": 0.056,
+      "bands": [
+        "content",
+        "content",
+        "content",
+        "content"
+      ],
+      "bottom_band_has_content": true,
+      "overflow_px": 0,
+      "breathing": false,
+      "anchors": {
+        "kicker": true,
+        "source": true,
+        "bottom_rule": true,
+        "top_gap_px": 115,
+        "bottom_gap_px": 115
+      },
+      "verdict": "pass",
+      "issues": [],
+      "png": "card-04.png"
+    },
+    {
+      "index": 5,
+      "layout": "quote",
+      "title": "高级感来自克制",
+      "fill_ratio": 0.84,
+      "content_extent_px": 1210,
+      "covered_px": 370.453125,
+      "top_gap_px": 115,
+      "bottom_gap_px": 115,
+      "largest_gap_px": 412,
+      "largest_gap_pct": 0.286,
+      "bands": [
+        "content",
+        "content",
+        "content",
+        "content"
+      ],
+      "bottom_band_has_content": true,
+      "overflow_px": 0,
+      "breathing": true,
+      "anchors": {
+        "kicker": true,
+        "source": true,
+        "bottom_rule": true,
+        "top_gap_px": 115,
+        "bottom_gap_px": 115
+      },
+      "verdict": "pass",
+      "issues": [],
+      "png": "card-05.png"
+    }
+  ],
+  "summary": {
+    "total": 5,
+    "pass": 5,
+    "fail": 0
+  }
+}

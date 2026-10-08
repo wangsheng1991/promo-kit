@@ -1,0 +1,42 @@
+{
+  "_说明": "复制成 promo.config.json 后按你的机器改。所有字段都有默认值，缺项静默降级；不需要密钥，本工具不联网。",
+
+  "chrome": "",
+  "out": "./out",
+
+  "canvas": {
+    "width": 1080,
+    "height": 1440,
+    "scale": 1
+  },
+
+  "brand": {
+    "name": "",
+    "handle": "",
+    "site": "",
+    "source": ""
+  },
+
+  "fonts": {
+    "stack": "Noto Sans SC, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Source Han Sans SC, system-ui, sans-serif",
+    "_说明": "卡片的字体栈写在 templates/card/card.css 里；改字体优先改 CSS，这里只留一份记录备查。"
+  },
+
+  "content_engine": {
+    "enabled": false,
+    "repo": "",
+    "_说明": "可选。指向本机的 content-engine（topics/<slug>/ 契约、content verify/lint/build）。留空则本工具只做卡片与物料，不碰站点流水线。"
+  },
+
+  "model": {
+    "provider": "",
+    "base_url": "",
+    "api_key_env": "",
+    "_说明": "可选。只有让智能体写选题/文案时才需要；纯渲染卡片不需要任何 key。密钥只从环境变量读，不要写进这个文件。"
+  },
+
+  "platforms": {
+    "publish": "manual",
+    "_说明": "本工具不发布任何内容。小红书 / 知乎 / 公众号一律人工；这里是留给调用方的显式声明。"
+  }
+}

@@ -1,0 +1,12 @@
+# 本机的东西不进仓库
+promo.config.json
+config.local.json
+.env*
+out/*
+outputs/*
+renders/*
+**/*token*
+**/*cookie*
+
+# 保留目录本身
+!out/.gitkeep
