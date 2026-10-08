@@ -127,6 +127,20 @@ promo-kit/
 - `bin/hf.sh` —— 找到本机的 HyperFrames CLI 并设好它要的环境变量再转发参数。本机 `npx hyperframes`
   会去要最新版然后失败，用这个壳就能跑：`./bin/hf.sh doctor`、`./bin/hf.sh render <项目> --format gif -o out.gif`。
 
+## 素材送出去放在哪
+
+**不另开素材仓库，也不靠聊天记录传文件**——成品进**产品自己的仓库**，路径即地址：
+
+| 产品 | 落点 | 对外地址 |
+|---|---|---|
+| dlss5nvidia.com | `~/code/shou/dlss5main/public/marketing/<渠道>/<批次或 kit>/` | `https://www.dlss5nvidia.com/marketing/…` |
+| houseplusplus.com | `~/code/ark/roomredeginv2/public/…` | `https://houseplusplus.com/…` |
+
+Vite 把 `public/` 原样拷进 `dist/`，所以文件进仓库就等于有了公开地址（单文件上限 100 MB：超过的视频走阿里云盘 `DLSS5-Studio/<批次>/`）。
+推上去之后**必须验证真的上线**：`git push` 成功 ≠ 站点更新。查
+`gh api repos/<owner>/<repo>/commits/<sha>/statuses`、`vercel ls <project>`、`vercel inspect <部署URL>`；
+部署莫名失败时用 `vercel redeploy <部署URL>`——只有它会打印真正的原因。
+
 ## 跨机器
 
 - **必须有**：Node 20+、一个 Chrome / Chromium、一份中文字体（macOS 自带 PingFang / Hiragino；

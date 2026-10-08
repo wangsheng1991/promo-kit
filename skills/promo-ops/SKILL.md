@@ -79,16 +79,20 @@ updated: 2026-10-08T07:20:00Z
 
 `topics/<slug>/assets/` 是站点 CI 必须拿到的源文件（CI 在 ubuntu 上没有 Chrome 和中文字体），所以只有签过字的成品才进去；`dist/` 永不手改。
 
-**交付（把素材送出去）**：图片 / GIF / 小视频走 **GitHub**——提交进内容源仓库的 `topics/<slug>/assets/`，或推到专用仓库，然后给对方两个可用的地址：
+**交付（把素材送出去）**：**动图、视频、对比图都进「产品自己的仓库」**，不是另开一个素材仓库。
 
-- 可浏览：`https://<owner>.github.io/<repo>/<path>`（Pages）
-- 给机器读：`https://raw.githubusercontent.com/<owner>/<repo>/main/<path>`
+| 产品 | 落点 | 对外地址 |
+|---|---|---|
+| dlss5nvidia.com | `~/code/shou/dlss5main/public/marketing/<渠道>/<批次或 kit>/` | `https://www.dlss5nvidia.com/marketing/…` |
+| houseplusplus.com | `~/code/ark/roomredeginv2/public/…` | `https://houseplusplus.com/…` |
 
-**超过 100 MB 的视频不上 GitHub**（单文件上限 100 MB），走阿里云盘 `DLSS5-Studio/<批次>/`。推送是对外动作：**动手前拿到一句明确许可**，别自己发起。
+（Vite 把 `public/` 原样拷进 `dist/`，所以放进去就等于有公开地址。）已有先例：`marketing/reddit/dlss5-studio-kit/`（竖版 GIF + 1080p reel）、`marketing/cases/20261008/`（五支 15 秒案例片）。
 
-两个已知的坑：首次 push 会被代理打成 `RPC failed; HTTP 400`，改用
-`git -c http.postBuffer=104857600 -c http.version=HTTP/1.1 push` 就过；新开的 Pages 第一次构建会
-`Page build failed.`，补一个空 `.nojekyll` 再推，约 1–2 分钟上线（没有 `index.html` 时站点根目录是 404，所以链接要指到具体文件）。
+**推上去之后必须验证真的上线了**：`git push` 成功 ≠ 站点更新。查 `gh api repos/<o>/<r>/commits/<sha>/statuses`、`vercel ls <project>`、`vercel inspect <部署URL>`，必要时 `vercel redeploy <部署URL>`（它才会打印真正的错误）。2026-10-08 就栽在这：`vercel.json` 里一个被 Vercel 拒绝的字段让每次部署在构建前直接失败，站点一直返回 SPA 外壳。
+
+**超过 100 MB 的视频不上 GitHub**（单文件上限 100 MB），走阿里云盘 `DLSS5-Studio/<批次>/`。推送是对外动作：**动手前拿到一句明确许可**。
+
+已知的坑：push 前要覆盖 dlss5main 仓库里那个已死的代理——`git -c http.proxy=http://127.0.0.1:1082 -c https.proxy=http://127.0.0.1:1082 push origin main`；新开的 Pages 第一次构建会 `Page build failed.`（补一个空 `.nojekyll` 再推）；代理下首次 push 可能被 400 打回，加 `-c http.postBuffer=104857600 -c http.version=HTTP/1.1`。
 
 ## 5. 硬红线
 
